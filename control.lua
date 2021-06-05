@@ -25,22 +25,17 @@ script.on_event(defines.events.on_player_changed_position,
   function(event)
     local player = game.get_player(event.player_index) -- get the player that moved
     local armorInventory = player.get_inventory(defines.inventory.character_armor) -- gets the armor slot of the player
-    local armorGrid = nil
 
-    if armorInventory.find_item_stack("power-armor") then
-        armorGrid = armorInventory.find_item_stack("power-armor").grid
-    end
-    if armorInventory.find_item_stack("power-armor-mk2") then
-        armorGrid = armorInventory.find_item_stack("power-armor-mk2").grid
-    end
-    if armorInventory.find_item_stack("modular-armor") then
-        armorGrid = armorInventory.find_item_stack("modular-armor").grid
-    end
-
-    if armorGrid ~= nil then
-        --if armorGrid.get_contents("defener-spawner") >= 1 then
+    if armorInventory[1].grid then
+        if armorGrid.get_item_count("defener-spawner-equipment") >= 1 then
             player.surface.create_entity{name="defender-capsule", position=player.position, force=player.force, source=player.character, target=player.position, speed=10}
-        --end
+        end
+        if armorGrid.get_item_count("distractor-spawner-equipment") >= 1 then
+            player.surface.create_entity{name="distractor-capsule", position=player.position, force=player.force, source=player.character, target=player.position, speed=10}
+        end
+        if armorGrid.get_item_count("destroyer-spawner-equipment") >= 1 then
+            player.surface.create_entity{name="destroyer-capsule", position=player.position, force=player.force, source=player.character, target=player.position, speed=10}
+        end
     end
 end
 )
