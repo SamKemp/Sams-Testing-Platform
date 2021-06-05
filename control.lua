@@ -40,13 +40,13 @@ script.on_event(defines.events.on_player_changed_position,
         local armorGrid = armorInventory[1].grid
         local max_robots = game.forces.player.maximum_following_robot_count
 
-        if has_value(armorGrid.equipment,"defener-spawner-equipment") and player.character.following_robots < max_robots and player.in_combat then
+        if has_value(armorGrid.equipment,"defener-spawner-equipment") and #player.character.following_robots.count < max_robots and player.in_combat then
             player.surface.create_entity{name="defender-capsule", position=player.position, force=player.force, source=player.character, target=player.position, speed=10}
         end
-        if has_value(armorGrid.equipment,"distractor-spawner-equipment") and player.character.following_robots < max_robots and player.in_combat then
+        if has_value(armorGrid.equipment,"distractor-spawner-equipment") and #player.character.following_robots < max_robots and player.in_combat then
             player.surface.create_entity{name="distractor-capsule", position=player.position, force=player.force, source=player.character, target=player.position, speed=10}
         end
-        if has_value(armorGrid.equipment,"destroyer-spawner-equipment") and player.character.following_robots < max_robots and player.in_combat then
+        if has_value(armorGrid.equipment,"destroyer-spawner-equipment") and #player.character.following_robots < max_robots and player.in_combat then
             player.surface.create_entity{name="destroyer-capsule", position=player.position, force=player.force, source=player.character, target=player.position, speed=10}
         end
     end
