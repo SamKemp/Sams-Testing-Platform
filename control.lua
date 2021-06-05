@@ -39,4 +39,5 @@ script.on_event(defines.events.on_player_changed_position,
             player.surface.create_entity{name="defender-capsule", position=player.position, force="neutral"}
         end
     end
+end
 )
