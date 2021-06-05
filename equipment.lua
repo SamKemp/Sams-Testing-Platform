@@ -1,6 +1,6 @@
 data:extend({
 	{
-		type = "active-defense-equipment",
+		type = "belt-immunity-equipment",
 		name = "defener-spawner-equipment",
 		take_result = "defener-spawner-equipment",
 		sprite =
@@ -27,7 +27,7 @@ data:extend({
 		energy_consumption = "100kW",
 	},
     {
-		type = "active-defense-equipment",
+		type = "belt-immunity-equipment",
 		name = "destroyer-spawner-equipment",
 		take_result = "destroyer-spawner-equipment",
 		sprite =
@@ -54,7 +54,7 @@ data:extend({
 		energy_consumption = "100kW",
 	},
     {
-		type = "active-defense-equipment",
+		type = "belt-immunity-equipment",
 		name = "distractor-spawner-equipment",
 		take_result = "distractor-spawner-equipment",
 		sprite =
