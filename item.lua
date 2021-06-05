@@ -1,4 +1,4 @@
-local defenderSpawner = table.deepcopy(data.raw["belt-immunity-equipment"]["belt-immunity-equipment"])
+local defenderSpawner = table.deepcopy(data.raw["item"]["belt-immunity-equipment"])
 
 defenderSpawner.name = "defener-spawner"
 defenderSpawner.icons = {
