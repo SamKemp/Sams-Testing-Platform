@@ -1,6 +1,8 @@
 --data.lua
 
 require("item")
+require("equipment")
+require("recipe")
 
 local button={
     type = "custom-input",

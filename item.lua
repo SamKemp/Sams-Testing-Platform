@@ -1,17 +1,37 @@
-local defenderSpawner = table.deepcopy(data.raw["item"]["belt-immunity-equipment"])
 
-defenderSpawner.name = "defener-spawner"
-defenderSpawner.icons = {
+--Equipment
+data:extend({
+	{
+		type = "item",
+		name = "defener-spawner-equipment",
+		icon = "__Sams-Testing-Platform__/graphics/icons/defener-spawner-equipment.png",
+		icon_size = 32,
+		placed_as_equipment_result = "defener-spawner-equipment",
+		flags = {},
+		subgroup = "equipment",
+		--order = "e[robotics]-a[personal-roboport-equipment]",
+		stack_size = 1
+	},
     {
-        icon = data.raw["capsule"]["defender-capsule"].icon,
-        tint = {r=1,g=0,b=0,a=0.3}
-    },
-}
-
-local recipe = table.deepcopy(data.raw["recipe"]["belt-immunity-equipment"])
-recipe.enabled = true
-recipe.name = "defener-spawner"
-recipe.ingredients = {{"defender-capsule",20},{"advanced-circuit",5},{"steel-plate",10}}
-recipe.result = "defener-spawner"
-
-data:extend{defenderSpawner,recipe}
+		type = "item",
+		name = "destroyer-spawner-equipment",
+		icon = "__Sams-Testing-Platform__/graphics/icons/destroyer-spawner-equipment.png",
+		icon_size = 32,
+		placed_as_equipment_result = "destroyer-spawner-equipment",
+		flags = {},
+		subgroup = "equipment",
+		--order = "e[robotics]-a[personal-roboport-equipment]",
+		stack_size = 1
+	},
+    {
+		type = "item",
+		name = "distractor-spawner-equipment",
+		icon = "__Sams-Testing-Platform__/graphics/icons/distractor-spawner-equipment.png",
+		icon_size = 32,
+		placed_as_equipment_result = "distractor-spawner-equipment",
+		flags = {},
+		subgroup = "equipment",
+		--order = "e[robotics]-a[personal-roboport-equipment]",
+		stack_size = 1
+	},
+})
