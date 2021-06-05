@@ -1,5 +1,15 @@
 --control.lua
 
+local function has_value (tab, val)
+    for index, value in ipairs(tab) do
+        if value.name == val then
+            return true
+        end
+    end
+
+    return false
+end
+
 script.on_event("sams-testing-input", function(event)
     local player = game.get_player(event.player_index)
     game.print("Player " .. player.name .. " Ran on tick: " .. tostring(event.tick))
@@ -41,13 +51,3 @@ script.on_event(defines.events.on_player_changed_position,
     end
 end
 )
-
-local function has_value (tab, val)
-    for index, value in ipairs(tab) do
-        if value.name == val then
-            return true
-        end
-    end
-
-    return false
-end
