@@ -28,16 +28,26 @@ script.on_event(defines.events.on_player_changed_position,
 
     if armorInventory[1].grid then
         local armorGrid = armorInventory[1].grid
-        
-        if armorGrid.get_item_count("defener-spawner-equipment") >= 1 then
+
+        if has_value(armorGrid.equipment,"defener-spawner-equipment") then
             player.surface.create_entity{name="defender-capsule", position=player.position, force=player.force, source=player.character, target=player.position, speed=10}
         end
-        if armorGrid.get_item_count("distractor-spawner-equipment") >= 1 then
+        if has_value(armorGrid.equipment,"distractor-spawner-equipment") then
             player.surface.create_entity{name="distractor-capsule", position=player.position, force=player.force, source=player.character, target=player.position, speed=10}
         end
-        if armorGrid.get_item_count("destroyer-spawner-equipment") >= 1 then
+        if has_value(armorGrid.equipment,"destroyer-spawner-equipment") then
             player.surface.create_entity{name="destroyer-capsule", position=player.position, force=player.force, source=player.character, target=player.position, speed=10}
         end
     end
 end
 )
+
+local function has_value (tab, val)
+    for index, value in ipairs(tab) do
+        if value.name == val then
+            return true
+        end
+    end
+
+    return false
+end
