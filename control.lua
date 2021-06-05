@@ -34,7 +34,7 @@ script.on_event(defines.events.on_player_changed_position,
         armorGrid = armorInventory.find_item_stack("modular-armor").grid
     end
 
-    if armorGrid != nil then
+    if armorGrid ~= nil then
         armorGrid.get_item_count("defener-spawner") >= 1 then
             player.surface.create_entity{name="defender-capsule", position=player.position, force="neutral"}
         end
