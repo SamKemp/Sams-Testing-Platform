@@ -36,7 +36,7 @@ script.on_event(defines.events.on_player_changed_position,
 
     if armorGrid ~= nil then
         --if armorGrid.get_contents("defener-spawner") >= 1 then
-            player.surface.create_entity{name="defender-capsule", position=player.position, force="neutral", target=player.character}
+            player.surface.create_entity{name="defender-capsule", position=player.position, force="neutral", target=player.character, speed=10, max_range=5}
         --end
     end
 end
