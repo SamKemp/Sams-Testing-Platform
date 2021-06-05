@@ -27,6 +27,8 @@ script.on_event(defines.events.on_player_changed_position,
     local armorInventory = player.get_inventory(defines.inventory.character_armor) -- gets the armor slot of the player
 
     if armorInventory[1].grid then
+        local armorGrid = armorInventory[1].grid
+        
         if armorGrid.get_item_count("defener-spawner-equipment") >= 1 then
             player.surface.create_entity{name="defender-capsule", position=player.position, force=player.force, source=player.character, target=player.position, speed=10}
         end
