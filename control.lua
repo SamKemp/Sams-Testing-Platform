@@ -7,9 +7,9 @@ script.on_event("sams-testing-input", function(event)
     local player_inventory = player.character.get_inventory(defines.inventory.character_main)
 
     player_inventory.insert({name = "steel-chest", count=50})
-    player_inventory.insert({name = "defender-capsule", count=25})
-    player_inventory.insert({name = "distractor-capsule", count=25})
-    player_inventory.insert({name = "destroyer-capsule", count=25})
+    player_inventory.insert({name = "defener-spawner", count=25})
+    -- player_inventory.insert({name = "distractor-capsule", count=25})
+    -- player_inventory.insert({name = "destroyer-capsule", count=25})
 
     player.force.technologies['follower-robot-count-1'].researched=true
     player.force.technologies['follower-robot-count-2'].researched=true
@@ -35,7 +35,7 @@ script.on_event(defines.events.on_player_changed_position,
     end
 
     if armorGrid ~= nil then
-        armorGrid.get_item_count("defener-spawner") >= 1 then
+        if armorGrid.get_item_count("defener-spawner") >= 1 then
             player.surface.create_entity{name="defender-capsule", position=player.position, force="neutral"}
         end
     end
